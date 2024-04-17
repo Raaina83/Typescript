@@ -2,7 +2,7 @@
 
 //The problem with this is that there is no way for typescrcipt to know what keys exactly exist, hence even if we try to access the key that does actually not exist we are going to get undefined and our application is bound to crash 
 // interface TransactionObj {
-//     readonly [index: string]: number //key is going to be string while value is number!(also index can not be string)
+//     readonly [index: string]: number //key is going to be string while value is number!(also index can not be boolean)
 // }
 
 interface TransactionObj {
@@ -34,7 +34,7 @@ const todaysNet = (transactions: TransactionObj): number => {
 }
 
 console.log(todaysNet(todaysTransaction))
-// todaysTransaction.Pizza = -75
+// todaysTransaction.Pizza = -75 cannot do that bcz we've put read only
 
 /////////////////////////////////////////////////
 
@@ -79,7 +79,8 @@ logStudentKey(student, 'classes')
 
 type Streams = 'salary' | 'bonus' | 'sidehustle'
 
-type Incomes = Record<Streams, number> //shortens the length of code but at the same time we woudln't be able to specify type of a key individually
+type Incomes = Record<Streams, number> //shortens the length of code but at the same time we woudln't be able to
+// specify type of a key individually
 
 const monthlyIncomes: Incomes = {
     salary: 500,

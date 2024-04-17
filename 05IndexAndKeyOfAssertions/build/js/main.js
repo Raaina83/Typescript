@@ -37,6 +37,7 @@ const logStudentKey = (student, key) => {
     console.log(`Student ${key}: ${student[key]}`);
 };
 logStudentKey(student, 'classes');
+// specify type of a key individually
 const monthlyIncomes = {
     salary: 500,
     bonus: 100,
