@@ -16,7 +16,7 @@ let nextVal = addOrConact(5, 8, 'concat'); //actually is wrong but typescript no
 // 10 as string //wrong
 10;
 //DOM
-const img = document.querySelector('img'); //non-null expression
+const img = document.querySelector('img'); //non-null expression(we can just ! mark)
 const imgTag = document.getElementById('#img');
 const nextImg = document.getElementById('#img');
 img.src;

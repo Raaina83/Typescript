@@ -1,7 +1,9 @@
+//inference
 let username = "priya";
 console.log(username)
 
 //OBJECT
+//annotation(explicitly telling the type of myObj)
 let myObj: Object
 
 myObj = []
@@ -22,6 +24,30 @@ interface HumanTwo { //can use in classes
     age?: number,
     albums: (string | number)[]
 }
+
+interface User {
+    name: String,
+    age: Number,
+    email: String
+}
+
+interface Admin extends User {
+    admin: Boolean
+}
+
+function isAdmin(admin: Admin) {
+    console.log(admin.admin);
+}
+
+isAdmin({name:"", email:"", age: 17, admin:true})
+
+interface abcd {
+    name: String
+}
+
+interface abcd {
+    email: String
+} //two interfaces with same name will be merged
 
 let hwasa: Human = {
     name: 'Hwasa',
@@ -56,5 +82,4 @@ enum Grade {
     B,
     A,
 }
-
 console.log(Grade.B)

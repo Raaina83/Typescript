@@ -24,7 +24,7 @@ let nextVal: number = addOrConact(5, 8, 'concat') as number //actually is wrong 
 (10 as unknown) as string
 
 //DOM
-const img = document.querySelector('img')! //non-null expression
+const img = document.querySelector('img')! //non-null expression(we can just ! mark)
 const imgTag = document.getElementById('#img') as HTMLImageElement
 const nextImg = <HTMLImageElement>document.getElementById('#img')
 

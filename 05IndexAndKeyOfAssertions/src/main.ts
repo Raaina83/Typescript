@@ -6,7 +6,7 @@
 // }
 
 interface TransactionObj {
-    readonly [index: string]: number
+    readonly [index: string]: number //INDEX!!
     Pizza: number,
     Books: number,
     Job: number
@@ -33,8 +33,9 @@ const todaysNet = (transactions: TransactionObj): number => {
     return total
 }
 
+console.log(todaysTransaction['hello']) //returns undefines as hello key does not exist
 console.log(todaysNet(todaysTransaction))
-// todaysTransaction.Pizza = -75 cannot do that bcz we've put read only
+// todaysTransaction.Pizza = -75 (cannot do that bcz we've put read only)
 
 /////////////////////////////////////////////////
 
@@ -79,6 +80,7 @@ logStudentKey(student, 'classes')
 
 type Streams = 'salary' | 'bonus' | 'sidehustle'
 
+//RECORD UTILITY TYPE
 type Incomes = Record<Streams, number> //shortens the length of code but at the same time we woudln't be able to
 // specify type of a key individually
 

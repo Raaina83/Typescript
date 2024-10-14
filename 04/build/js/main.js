@@ -1,6 +1,8 @@
 "use strict";
 class Coder {
-    constructor(name, music, age, lang = 'Typescript') {
+    constructor(name, //VISIBILITY MODIFIER
+    music, age, lang = 'Typescript' //optional parameter
+    ) {
         this.name = name;
         this.music = music;
         this.age = age;
@@ -16,7 +18,7 @@ class Coder {
 }
 class webDev extends Coder {
     constructor(computer, name, music, age) {
-        super(name, music, age);
+        super(name, music, age); //basically to initialize everything we get from Coder
         this.computer = computer;
         this.computer = computer;
     }
@@ -56,6 +58,7 @@ const Priya = new Peeps("Priya");
 const Preti = new Peeps("Preti");
 console.log(Peeps.getCount());
 /////////////////////////////////////////
+//GETTERS AND SETTERS
 class Bands {
     constructor() {
         this.dataSet = [];
@@ -66,7 +69,7 @@ class Bands {
     set data(value) {
         if (Array.isArray(value) && value.every(el => typeof el === "string")) {
             this.dataSet = value;
-            return;
+            return; //setters cannot return a value
         }
         else {
             throw new Error("Params is not an array of strings");
@@ -75,5 +78,7 @@ class Bands {
 }
 const myBand = new Bands();
 myBand.data = ['jdwlq', 'howpqu', 'hifeoqp'];
+console.log(myBand.data);
+myBand.data = [...myBand.data, 'zz'];
 console.log(myBand.data);
 // myBand.data = 'gdwuqhg'

@@ -3,13 +3,13 @@ class Coder{
     // music: string
     // age: number
     // lang: string
-    secondLang!: string
+    secondLang!: string //means we are not going to initialize this for a while!(not recommended)
 
     constructor(
-        public readonly name: string, 
+        public readonly name: string,  //VISIBILITY MODIFIER
         public music:string, 
         private age: number, 
-        protected lang:string = 'Typescript'
+        protected lang:string = 'Typescript' //optional parameter
     ) {
         // this.name = name
         // this.music = music
@@ -28,7 +28,7 @@ class webDev extends Coder{
         name: string,
         music: string,
         age: number){
-            super(name, music, age)
+            super(name, music, age) //basically to initialize everything we get from Coder
             this.computer = computer
         }
 
@@ -43,7 +43,9 @@ console.log(raaina.getAge())
 
 const priya = new webDev("HP","Priya Jyot", "hindi", 19)
 console.log(priya.getLang())
+
 //////////////////////////////////////
+//IMPLEMENTING INTERFACE TO A CLASS!
 
 interface Musician {
     name: string,
@@ -91,7 +93,7 @@ const Preti = new Peeps("Preti")
 console.log(Peeps.getCount())
 
 /////////////////////////////////////////
-
+//GETTERS AND SETTERS
 class Bands {
     private dataSet: string[]
 
@@ -106,7 +108,7 @@ class Bands {
     public set data(value: string[]) {
         if(Array.isArray(value) && value.every(el => typeof el === "string")) {
             this.dataSet = value
-            return
+            return //setters cannot return a value
         } else {
         throw new Error("Params is not an array of strings")
     }
@@ -114,5 +116,7 @@ class Bands {
 
 const myBand = new Bands()
 myBand.data = ['jdwlq', 'howpqu', 'hifeoqp']
+console.log(myBand.data)
+myBand.data = [...myBand.data, 'zz']
 console.log(myBand.data)
 // myBand.data = 'gdwuqhg'

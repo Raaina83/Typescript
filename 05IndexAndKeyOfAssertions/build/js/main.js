@@ -16,6 +16,7 @@ const todaysNet = (transactions) => {
     }
     return total;
 };
+console.log(todaysTransaction['hello']); //returns undefines as hello key does not exist
 console.log(todaysNet(todaysTransaction));
 const student = {
     subject: "maths",
